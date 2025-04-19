@@ -3,8 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Style/style.css">
 </head>
 <body>
 
+<!--header section-->
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">POS-SYSTEM</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" href="#">Customer</a>
+                            <a class="nav-link active" href="#">Item</a>
+                            <a class="nav-link active" href="#">Place Order</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!--home section-->
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <section id="home">
+                <img src="Assets/blake-wisz-tE6th1h6Bfk-unsplash.jpg" class="img-fluid" alt="...">
+            </section>
+        </div>
+    </div>
+</div>
+
+<!--customer section-->
+
+
+<div class="customer container text-center">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="topic">Customer Manage</h2>
+        </div>
+    </div>
+
+    <div class="row align-items-center">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-7">
+            <div class="card customer-card">
+                <div class="card-header bg-warning text-dark">
+                    <h5>Search Customer</h5>
+                </div>
+                <div class="input-customer-name input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Input</span>
+                    <input type="text" class=" form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="buttons card-body btn-group">
+                    <button type="button" class="button btn btn-primary">Search</button>
+                    <button type="button" class="button btn btn-danger">Unregister</button>
+                    <button type="button" class="button btn btn-info">Clear</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="button col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+            <button type="button" class="btn btn-warning btn-md">Add new Customer</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="customer-table col-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Contact</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Lahiru</td>
+                    <td>Rathnapura</td>
+                    <td>0758496123</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Lakshan</td>
+                    <td>Rathnapura</td>
+                    <td>0745896123</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sanjeewa</td>
+                    <td>Rathnapura</td>
+                    <td>0714598617</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--item section-->
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <section id="item">
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<!--place order section-->
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <section id="placeOrder">
+
+            </section>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
