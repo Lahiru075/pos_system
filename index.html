@@ -5,12 +5,13 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="Assets/lib/normalize.css">
 </head>
 <body>
 
 <!--header section-->
 
-<div class="container text-center">
+<div class="container-fluid text-center">
     <div class="row">
         <div class="col">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -36,7 +37,7 @@
 </div>
 
 <!--home section-->
-<div class="container text-center">
+<div class="container-fluid text-center">
     <div class="row">
         <div class="col">
             <section id="home">
@@ -48,8 +49,7 @@
 
 <!--customer section-->
 
-
-<div class="customer container text-center">
+<div class="customer container-fluid text-center">
     <div class="row">
         <div class="col-12">
             <h2 class="topic">Customer Manage</h2>
@@ -66,7 +66,7 @@
                     <span class="input-group-text" id="basic-addon1">Input</span>
                     <input type="text" class=" form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
-                <div class="buttons card-body btn-group">
+                <div class="card-buttons card-body btn-group">
                     <button type="button" class="button btn btn-primary">Search</button>
                     <button type="button" class="button btn btn-danger">Unregister</button>
                     <button type="button" class="button btn btn-info">Clear</button>
@@ -74,13 +74,13 @@
             </div>
         </div>
 
-        <div class="button col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+        <div class="add-customer-button col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
             <button type="button" class="btn btn-warning btn-md">Add new Customer</button>
         </div>
     </div>
 
     <div class="row">
-        <div class="customer-table col-12">
+        <div class="customer-table">
             <table class="table">
                 <thead>
                 <tr>
@@ -92,19 +92,19 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>1</td>
+                    <td>C001</td>
                     <td>Lahiru</td>
                     <td>Rathnapura</td>
                     <td>0758496123</td>
                 </tr>
                 <tr>
-                    <td>2</td>
+                    <td>C002</td>
                     <td>Lakshan</td>
                     <td>Rathnapura</td>
                     <td>0745896123</td>
                 </tr>
                 <tr>
-                    <td>3</td>
+                    <td>C003</td>
                     <td>Sanjeewa</td>
                     <td>Rathnapura</td>
                     <td>0714598617</td>
@@ -116,26 +116,311 @@
 </div>
 
 <!--item section-->
-<div class="container text-center">
+<div class="item container-fluid text-center">
     <div class="row">
-        <div class="col">
-            <section id="item">
-
-            </section>
+        <div class="col-12">
+            <h2 class="topic">Item Manage</h2>
         </div>
     </div>
+
+    <div class="row align-items-center">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-7">
+            <div class="card item-card">
+                <div class="card-header bg-warning text-dark">
+                    <h5>Search Item</h5>
+                </div>
+                <div class="input-item-name input-group mb-3">
+                    <span class="input-group-text" id="basic-addon2">Input</span>
+                    <input type="text" class=" form-control" placeholder="Item name" aria-label="Item name" aria-describedby="basic-addon1">
+                </div>
+                <div class="card-buttons card-body btn-group">
+                    <button type="button" class="button btn btn-primary">Search</button>
+                    <button type="button" class="button btn btn-danger">Remove Item</button>
+                    <button type="button" class="button btn btn-info">Clear</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="add-item-button col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+            <button type="button" class="btn btn-warning btn-md">Add new Item</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="customer-table">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>I001</td>
+                    <td>Dettol</td>
+                    <td>250.00</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>I002</td>
+                    <td>Sunlight</td>
+                    <td>120.00</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>I003</td>
+                    <td>Lux</td>
+                    <td>100.00</td>
+                    <td>20</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </div>
 
 <!--place order section-->
-<div class="container text-center">
+<!--<div class="container text-center">-->
+<!--    <div class="row">-->
+<!--        <div class="col">-->
+<!--            <section id="placeOrder">-->
+<!--                <h1 class="topic">Place order</h1>-->
+<!--                <div class="container text-center">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col container1">-->
+<!--                            <form>-->
+<!--                                <h2 class="topic2">Invoice</h2>-->
+<!--                                <div class="mb-2">-->
+<!--                                    <label for="OrderId" class="form-label lable-from">Order id : </label>-->
+<!--                                    <input type="text" class="form-control" id="OrderId" aria-describedby="emailHelp">-->
+<!--                                </div>-->
+<!--                                <div class="mb-2">-->
+<!--                                    <label for="CustomerId" class="form-label lable-from">Customer Id: </label>-->
+<!--                                    <input type="text" class="form-control" id="CustomerId" aria-describedby="emailHelp">-->
+<!--                                </div>-->
+<!--                                <div class="mb-2">-->
+<!--                                    <label for="CustomerName" class="form-label lable-from">Customer Name: </label>-->
+<!--                                    <input type="text" class="form-control" id="CustomerName" aria-describedby="emailHelp">-->
+<!--                                </div>-->
+<!--                                <div class="mb-2">-->
+<!--                                    <label for="CustomerSalary" class="form-label lable-from">Salary : </label>-->
+<!--                                    <input type="text" class="form-control" id="CustomerSalary" aria-describedby="emailHelp">-->
+<!--                                </div>-->
+<!--                                <div class="mb-2">-->
+<!--                                    <label for="CustomerAddress" class="form-label lable-from">Address : </label>-->
+<!--                                    <input type="text" class="form-control" id="CustomerAddress" aria-describedby="emailHelp">-->
+<!--                                </div>-->
+<!--                                <div class="mb-2">-->
+<!--                                    <label for="date" class="form-label lable-from">Date: </label>-->
+<!--                                    <input type="date" class="form-control" id="date" aria-describedby="emailHelp">-->
+<!--                                </div>-->
+
+<!--                            </form>-->
+<!--                        </div>-->
+<!--                        <div class="col container1">-->
+<!--                            <form>-->
+<!--                                <h2 class="topic2">Item select </h2>-->
+<!--                                <div class="mb-2">-->
+<!--                                    <label for="itemId" class="form-label lable-from">Item: </label>-->
+<!--                                    <input type="text" class="form-control" id="itemId" aria-describedby="emailHelp">-->
+<!--                                </div>-->
+<!--                                <div class="mb-2">-->
+<!--                                    <label for="ItemName" class="form-label lable-from">Customer Id: </label>-->
+<!--                                    <input type="text" class="form-control" id="ItemName" aria-describedby="emailHelp">-->
+<!--                                </div>-->
+<!--                                <div class="mb-2">-->
+<!--                                    <label for="Price" class="form-label lable-from">Customer Name: </label>-->
+<!--                                    <input type="text" class="form-control" id="Price" aria-describedby="emailHelp">-->
+<!--                                </div>-->
+<!--                                <div class="mb-2">-->
+<!--                                    <label for="Quantity" class="form-label lable-from">Salary : </label>-->
+<!--                                    <input type="text" class="form-control" id="Quantity" aria-describedby="emailHelp">-->
+<!--                                </div>-->
+<!--                                <div class="mb-2">-->
+<!--                                    <label for="Order Quantity" class="form-label lable-from">Address : </label>-->
+<!--                                    <input type="text" class="form-control" id="Order Quantity" aria-describedby="emailHelp">-->
+<!--                                </div>-->
+<!--                                <button type="button" class="btn btn-danger btn">Add item</button>-->
+
+<!--                            </form>-->
+<!--                        </div>-->
+<!--                        <div id="pay-container" class="row container1">-->
+<!--                            <form>-->
+<!--                                <label class="form-label total">Total : 00000 Rs/=</label>-->
+<!--                                <label class="form-label total">Sub Total : 00000 Rs/=</label>-->
+
+<!--                                <div class="mb-2">-->
+<!--                                    <label for="cash" class="form-label lable-from">Cash: </label>-->
+<!--                                    <input type="text" class="form-control" id="cash" aria-describedby="emailHelp">-->
+<!--                                </div>-->
+<!--                                <div class="mb-2">-->
+<!--                                    <label for="Discount" class="form-label lable-from">Discount: </label>-->
+<!--                                    <input type="text" class="form-control" id="Discount" aria-describedby="emailHelp">-->
+<!--                                </div>-->
+<!--                                <div class="mb-2">-->
+<!--                                    <label for="Balance" class="form-label lable-from">Address : </label>-->
+<!--                                    <input type="text" class="form-control" id="Balance" aria-describedby="emailHelp">-->
+<!--                                </div>-->
+<!--                                <button type="button" class="btn btn-success">Purchase</button>-->
+<!--                            </form>-->
+<!--                        </div>-->
+<!--                        <table class="table">-->
+<!--                            <thead>-->
+<!--                            <tr>-->
+<!--                                <th scope="col">Item code</th>-->
+<!--                                <th scope="col">Item name</th>-->
+<!--                                <th scope="col">Price</th>-->
+<!--                                <th scope="col">Quantity</th>-->
+<!--                                <th scope="col">Total</th>-->
+<!--                            </tr>-->
+<!--                            </thead>-->
+<!--                            <tbody>-->
+<!--                            <tr>-->
+<!--                                <th scope="row">1</th>-->
+<!--                                <td></td>-->
+<!--                                <td></td>-->
+<!--                                <td></td>-->
+<!--                                <td></td>-->
+<!--                            </tr>-->
+<!--                            </tbody>-->
+<!--                        </table>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<div class="container-fluid text-center py-4">
     <div class="row">
         <div class="col">
-            <section id="placeOrder">
+            <section id="placeOrder" class="mb-4">
+                <h1 class="topic mb-4">Place Order</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <form class="p-4 border rounded shadow-sm bg-white h-100">
+                                <h2 class="topic2 mb-3">Invoice</h2>
+                                <div class="mb-3">
+                                    <label for="OrderId" class="form-label lable-from">Order ID:</label>
+                                    <input type="text" class="form-control" id="OrderId" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="CustomerId" class="form-label lable-from">Customer ID:</label>
+                                    <input type="text" class="form-control" id="CustomerId" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="CustomerName" class="form-label lable-from">Customer Name:</label>
+                                    <input type="text" class="form-control" id="CustomerName" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="CustomerSalary" class="form-label lable-from">Salary:</label>
+                                    <input type="text" class="form-control" id="CustomerSalary" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="CustomerAddress" class="form-label lable-from">Address:</label>
+                                    <input type="text" class="form-control" id="CustomerAddress" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="date" class="form-label lable-from">Date:</label>
+                                    <input type="date" class="form-control" id="date" aria-describedby="emailHelp">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <form class="p-4 border rounded shadow-sm bg-white h-100">
+                                <h2 class="topic2 mb-3">Item Select</h2>
+                                <div class="mb-3">
+                                    <label for="itemId" class="form-label lable-from">Item ID:</label>
+                                    <input type="text" class="form-control" id="itemId" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ItemName" class="form-label lable-from">Item Name:</label>
+                                    <input type="text" class="form-control" id="ItemName" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Price" class="form-label lable-from">Price:</label>
+                                    <input type="text" class="form-control" id="Price" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Quantity" class="form-label lable-from">Available Quantity:</label>
+                                    <input type="text" class="form-control" id="Quantity" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="Order-Quantity" class="form-label lable-from">Order Quantity:</label>
+                                    <input type="text" class="form-control" id="Order-Quantity" aria-describedby="emailHelp">
+                                </div>
+                                <div class="d-grid">
+                                    <button type="button" class="btn btn-danger">Add Item</button>
+                                </div>
+                            </form>
+                        </div>
 
+                        <div class="col-12 mb-4">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover border">
+                                    <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col">Item Code</th>
+                                        <th scope="col">Item Name</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Total</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mx-auto mb-4">
+                            <form class="p-4 border rounded shadow-sm bg-white">
+                                <div class="mb-3 d-flex justify-content-between">
+                                    <label class="form-label total fw-bold fs-5">Total:</label>
+                                    <span class="fw-bold fs-5">00000 Rs/=</span>
+                                </div>
+                                <div class="mb-3 d-flex justify-content-between">
+                                    <label class="form-label total fw-bold fs-5">Sub Total:</label>
+                                    <span class="fw-bold fs-5">00000 Rs/=</span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="cash" class="form-label lable-from">Cash:</label>
+                                    <input type="text" class="form-control" id="cash" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Discount" class="form-label lable-from">Discount:</label>
+                                    <input type="text" class="form-control" id="Discount" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="Balance" class="form-label lable-from">Balance:</label>
+                                    <input type="text" class="form-control" id="Balance" aria-describedby="emailHelp">
+                                </div>
+                                <div class="d-grid">
+                                    <button type="button" class="btn btn-success btn-lg">Purchase</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </div>
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
