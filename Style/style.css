@@ -1,98 +1,68 @@
+/* header section */
+
+.header {
+    padding: 0;
+}
+
+.navbar-navigate {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    background-color: #176B87;
+}
+
+.text {
+    color: #B4D4FF;
+}
+
+/* home section */
+
+.home {
+    padding: 0;
+}
 /* customer section */
+.customer {
+    background-color: #EEF5FF; /* Light green background */
+    padding: 20px;
+}
+
 .topic {
-    color: #343a40;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #0d6efd;
-    display: inline-block;
-    padding-bottom: 10px;
+    color: #176B87; /* Dark blue for heading */
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
-.topic2 {
-    color: #0d6efd;
-    font-weight: 600;
-    border-bottom: 1px solid #dee2e6;
-    padding-bottom: 10px;
+.card-header {
+    background-color: #176B87; /* Dark blue for card header */
 }
 
-form {
-    transition: all 0.3s ease;
+.card-header > h5 {
+    color: #EEF5FF;
 }
 
-form:hover {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+.button-customer-card {
+    background-color: #86B6F6;
+    color: white;
 }
 
-.form-control {
-    border: 1px solid #ced4da;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.25rem;
+.input-span {
+    background-color: #86B6F6;
+    color: white;
 }
 
-.form-control:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-}
-
-.form-label {
-    text-align: left;
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #495057;
-    font-weight: 500;
-}
-
-.lable-from {
-    font-size: 0.95rem;
-}
-
-.btn {
-    border-radius: 0.3rem;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    transition: all 0.2s ease;
-}
-
-.btn-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
-}
-
-.btn-danger:hover {
-    background-color: #bb2d3b;
-    border-color: #b02a37;
-}
-
-.btn-success {
-    background-color: #198754;
-    border-color: #198754;
-}
-
-.btn-success:hover {
-    background-color: #157347;
-    border-color: #146c43;
-}
-
-.table {
-    background-color: white;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-}
-
-.table-dark {
-    background-color: #212529;
-}
-
-.table th, .table td {
-    padding: 0.75rem;
-    vertical-align: middle;
+.add-customer-button {
+    background-color: #176B87;
+    color: white;
+    width: 180px;
 }
 
 
 /* item section */
 
 .item {
-    background-color: #f3ede3;
+    background-color: #654b21;
     width: 100vw;
 }
 
@@ -119,16 +89,6 @@ form:hover {
 }
 
 /* please order*/
-
-.topic {
-    color: #343a40;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #0d6efd;
-    display: inline-block;
-    padding-bottom: 10px;
-}
 
 .topic2 {
     color: #0d6efd;

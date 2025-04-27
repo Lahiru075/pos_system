@@ -11,23 +11,23 @@
 
 <!--header section-->
 
-<div class="container-fluid text-center">
+<div class="header-body container-fluid text-center">
     <div class="row">
-        <div class="col">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="header col">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">POS-SYSTEM</a>
+                    <a class="text navbar-brand" href="#"><b>POS-SYSTEM</b></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-navigate collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            <a class="nav-link active" href="#">Customer</a>
-                            <a class="nav-link active" href="#">Item</a>
-                            <a class="nav-link active" href="#">Place Order</a>
+                            <a class="text nav-link" aria-current="page" href="#">Home</a>
+                            <a class="text nav-link" href="#">Customer</a>
+                            <a class="text nav-link" href="#">Item</a>
+                            <a class="text nav-link" href="#">Place Order</a>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
 <!--home section-->
 <div class="container-fluid text-center">
     <div class="row">
-        <div class="col">
+        <div class="home col">
             <section id="home">
                 <img src="Assets/blake-wisz-tE6th1h6Bfk-unsplash.jpg" class="img-fluid" alt="...">
             </section>
@@ -58,57 +58,57 @@
 
     <div class="row align-items-center">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-7">
-            <div class="card customer-card">
-                <div class="card-header bg-warning text-dark">
+            <div class="card customer-card mb-4 mt-3">
+                <div class="card-header text-dark">
                     <h5>Search Customer</h5>
                 </div>
-                <div class="input-customer-name input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Input</span>
+                <div class="input-customer-name input-group p-4">
+                    <span class="input-span input-group-text" id="basic-addon1">Input</span>
                     <input type="text" class=" form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
-                <div class="card-buttons card-body btn-group">
-                    <button type="button" class="button btn btn-primary">Search</button>
-                    <button type="button" class="button btn btn-danger">Unregister</button>
-                    <button type="button" class="button btn btn-info">Clear</button>
+                <div class="card-buttons card-body btn-group p-4">
+                    <button type="button" class="button-customer-card btn ">Search</button>
+                    <button type="button" class="button-customer-card btn ">Unregister</button>
+                    <button type="button" class="button-customer-card btn ">Clear</button>
                 </div>
             </div>
         </div>
 
-        <div class="add-customer-button col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
-            <button type="button" class="btn btn-warning btn-md">Add new Customer</button>
+        <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+            <button type="button" class="add-customer-button btn btn-md">Add new Customer</button>
         </div>
     </div>
 
     <div class="row">
         <div class="customer-table">
             <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Contact</th>
-                </tr>
+                <thead class="customer-table-head">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Contact</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>C001</td>
-                    <td>Lahiru</td>
-                    <td>Rathnapura</td>
-                    <td>0758496123</td>
-                </tr>
-                <tr>
-                    <td>C002</td>
-                    <td>Lakshan</td>
-                    <td>Rathnapura</td>
-                    <td>0745896123</td>
-                </tr>
-                <tr>
-                    <td>C003</td>
-                    <td>Sanjeewa</td>
-                    <td>Rathnapura</td>
-                    <td>0714598617</td>
-                </tr>
+                    <tr>
+                        <td>C001</td>
+                        <td>Lahiru</td>
+                        <td>Rathnapura</td>
+                        <td>0758496123</td>
+                    </tr>
+                    <tr>
+                        <td>C002</td>
+                        <td>Lakshan</td>
+                        <td>Rathnapura</td>
+                        <td>0745896123</td>
+                    </tr>
+                    <tr>
+                        <td>C003</td>
+                        <td>Sanjeewa</td>
+                        <td>Rathnapura</td>
+                        <td>0714598617</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -183,118 +183,7 @@
 
 </div>
 
-<!--place order section-->
-<!--<div class="container text-center">-->
-<!--    <div class="row">-->
-<!--        <div class="col">-->
-<!--            <section id="placeOrder">-->
-<!--                <h1 class="topic">Place order</h1>-->
-<!--                <div class="container text-center">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col container1">-->
-<!--                            <form>-->
-<!--                                <h2 class="topic2">Invoice</h2>-->
-<!--                                <div class="mb-2">-->
-<!--                                    <label for="OrderId" class="form-label lable-from">Order id : </label>-->
-<!--                                    <input type="text" class="form-control" id="OrderId" aria-describedby="emailHelp">-->
-<!--                                </div>-->
-<!--                                <div class="mb-2">-->
-<!--                                    <label for="CustomerId" class="form-label lable-from">Customer Id: </label>-->
-<!--                                    <input type="text" class="form-control" id="CustomerId" aria-describedby="emailHelp">-->
-<!--                                </div>-->
-<!--                                <div class="mb-2">-->
-<!--                                    <label for="CustomerName" class="form-label lable-from">Customer Name: </label>-->
-<!--                                    <input type="text" class="form-control" id="CustomerName" aria-describedby="emailHelp">-->
-<!--                                </div>-->
-<!--                                <div class="mb-2">-->
-<!--                                    <label for="CustomerSalary" class="form-label lable-from">Salary : </label>-->
-<!--                                    <input type="text" class="form-control" id="CustomerSalary" aria-describedby="emailHelp">-->
-<!--                                </div>-->
-<!--                                <div class="mb-2">-->
-<!--                                    <label for="CustomerAddress" class="form-label lable-from">Address : </label>-->
-<!--                                    <input type="text" class="form-control" id="CustomerAddress" aria-describedby="emailHelp">-->
-<!--                                </div>-->
-<!--                                <div class="mb-2">-->
-<!--                                    <label for="date" class="form-label lable-from">Date: </label>-->
-<!--                                    <input type="date" class="form-control" id="date" aria-describedby="emailHelp">-->
-<!--                                </div>-->
-
-<!--                            </form>-->
-<!--                        </div>-->
-<!--                        <div class="col container1">-->
-<!--                            <form>-->
-<!--                                <h2 class="topic2">Item select </h2>-->
-<!--                                <div class="mb-2">-->
-<!--                                    <label for="itemId" class="form-label lable-from">Item: </label>-->
-<!--                                    <input type="text" class="form-control" id="itemId" aria-describedby="emailHelp">-->
-<!--                                </div>-->
-<!--                                <div class="mb-2">-->
-<!--                                    <label for="ItemName" class="form-label lable-from">Customer Id: </label>-->
-<!--                                    <input type="text" class="form-control" id="ItemName" aria-describedby="emailHelp">-->
-<!--                                </div>-->
-<!--                                <div class="mb-2">-->
-<!--                                    <label for="Price" class="form-label lable-from">Customer Name: </label>-->
-<!--                                    <input type="text" class="form-control" id="Price" aria-describedby="emailHelp">-->
-<!--                                </div>-->
-<!--                                <div class="mb-2">-->
-<!--                                    <label for="Quantity" class="form-label lable-from">Salary : </label>-->
-<!--                                    <input type="text" class="form-control" id="Quantity" aria-describedby="emailHelp">-->
-<!--                                </div>-->
-<!--                                <div class="mb-2">-->
-<!--                                    <label for="Order Quantity" class="form-label lable-from">Address : </label>-->
-<!--                                    <input type="text" class="form-control" id="Order Quantity" aria-describedby="emailHelp">-->
-<!--                                </div>-->
-<!--                                <button type="button" class="btn btn-danger btn">Add item</button>-->
-
-<!--                            </form>-->
-<!--                        </div>-->
-<!--                        <div id="pay-container" class="row container1">-->
-<!--                            <form>-->
-<!--                                <label class="form-label total">Total : 00000 Rs/=</label>-->
-<!--                                <label class="form-label total">Sub Total : 00000 Rs/=</label>-->
-
-<!--                                <div class="mb-2">-->
-<!--                                    <label for="cash" class="form-label lable-from">Cash: </label>-->
-<!--                                    <input type="text" class="form-control" id="cash" aria-describedby="emailHelp">-->
-<!--                                </div>-->
-<!--                                <div class="mb-2">-->
-<!--                                    <label for="Discount" class="form-label lable-from">Discount: </label>-->
-<!--                                    <input type="text" class="form-control" id="Discount" aria-describedby="emailHelp">-->
-<!--                                </div>-->
-<!--                                <div class="mb-2">-->
-<!--                                    <label for="Balance" class="form-label lable-from">Address : </label>-->
-<!--                                    <input type="text" class="form-control" id="Balance" aria-describedby="emailHelp">-->
-<!--                                </div>-->
-<!--                                <button type="button" class="btn btn-success">Purchase</button>-->
-<!--                            </form>-->
-<!--                        </div>-->
-<!--                        <table class="table">-->
-<!--                            <thead>-->
-<!--                            <tr>-->
-<!--                                <th scope="col">Item code</th>-->
-<!--                                <th scope="col">Item name</th>-->
-<!--                                <th scope="col">Price</th>-->
-<!--                                <th scope="col">Quantity</th>-->
-<!--                                <th scope="col">Total</th>-->
-<!--                            </tr>-->
-<!--                            </thead>-->
-<!--                            <tbody>-->
-<!--                            <tr>-->
-<!--                                <th scope="row">1</th>-->
-<!--                                <td></td>-->
-<!--                                <td></td>-->
-<!--                                <td></td>-->
-<!--                                <td></td>-->
-<!--                            </tr>-->
-<!--                            </tbody>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </section>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
+<!-- place order section -->
 
 <div class="container-fluid text-center py-4">
     <div class="row">
