@@ -22,7 +22,9 @@
 .home {
     padding: 0;
 }
+
 /* customer section */
+
 .customer {
     background-color: #EEF5FF; /* Light green background */
     padding: 20px;
@@ -45,6 +47,7 @@
 .button-customer-card {
     background-color: #86B6F6;
     color: white;
+    border-radius: 5px !important;
 }
 
 .input-span {
@@ -62,30 +65,35 @@
 /* item section */
 
 .item {
-    background-color: #654b21;
-    width: 100vw;
+    background-color: #EEF5FF; /* Light green background */
+    padding: 20px;
+}
+
+.topic {
+    color: #176B87; /* Dark blue for heading */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.card-header {
+    background-color: #176B87; /* Dark blue for card header */
+}
+
+.input-span {
+    background-color: #86B6F6;
+    color: white;
+}
+
+.button-item-card {
+    background-color: #86B6F6;
+    color: white;
+    border-radius: 5px !important;
 }
 
 .add-item-button {
-    position: relative;
-    height: fit-content;
-    width: fit-content;
-}
-
-.add-item-button > button {
-    width: 15rem;
-    height: 3rem;
-    font-size: 1rem;
-    position: absolute;
-    top: 1rem;
-    left: 8rem;
-}
-
-.input-item-name {
-    margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    width: 95%;
+    background-color: #176B87;
+    color: white;
+    width: 180px;
 }
 
 /* please order*/
