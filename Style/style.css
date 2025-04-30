@@ -61,22 +61,43 @@
     width: 180px;
 }
 
+.customer-ids {
+    height: 45px;
+}
+
+.table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead th {
+    background-color: #176B87 !important;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-weight: 500;
+    border:none;
+}
 
 /* item section */
 
 .item {
-    background-color: #EEF5FF; /* Light green background */
+    background-color: #EEF5FF;
     padding: 20px;
 }
 
 .topic {
-    color: #176B87; /* Dark blue for heading */
+    color: #176B87;
     margin-bottom: 20px;
     font-weight: bold;
 }
 
 .card-header {
-    background-color: #176B87; /* Dark blue for card header */
+    background-color: #176B87;
 }
 
 .input-span {
@@ -90,6 +111,10 @@
     border-radius: 5px !important;
 }
 
+.item-ids {
+    height: 45px;
+}
+
 .add-item-button {
     background-color: #176B87;
     color: white;
@@ -98,8 +123,12 @@
 
 /* please order*/
 
+.place-order{
+    background-color: #EEF5FF;
+}
+
 .topic2 {
-    color: #0d6efd;
+    color: #176B87;
     font-weight: 600;
     border-bottom: 1px solid #dee2e6;
     padding-bottom: 10px;
@@ -143,24 +172,22 @@ form:hover {
     transition: all 0.2s ease;
 }
 
-.btn-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
+.button-add-item {
+    background-color: #86B6F6;
+    border: none;
 }
 
-.btn-danger:hover {
-    background-color: #bb2d3b;
-    border-color: #b02a37;
+.button-add-item:hover {
+    background-color: #176B87 !important;
 }
 
-.btn-success {
-    background-color: #198754;
-    border-color: #198754;
+.button-purchase {
+    background-color: #176B87 !important;
 }
 
-.btn-success:hover {
-    background-color: #157347;
-    border-color: #146c43;
+.button-purchase:hover {
+    background-color: #176B87 !important;
+    border: none;
 }
 
 .table {
