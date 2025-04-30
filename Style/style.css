@@ -13,8 +13,22 @@
     background-color: #176B87;
 }
 
+.head {
+    color: #B4D4FF !important;
+}
+
+.head:hover {
+    color: #B4D4FF;
+}
+
 .text {
     color: #B4D4FF;
+    text-decoration: none !important;
+}
+
+.text:hover {
+    background-color: #86B6F6 !important;
+    transition: 0.3s ease;
 }
 
 /* home section */
