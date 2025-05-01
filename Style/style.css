@@ -64,6 +64,12 @@
     border-radius: 5px !important;
 }
 
+.button-customer-card:hover {
+    background-color: #176B87;
+    color: white;
+
+}
+
 .input-span {
     background-color: #86B6F6;
     color: white;
@@ -73,6 +79,22 @@
     background-color: #176B87;
     color: white;
     width: 180px;
+    transition: box-shadow 0.3s;
+}
+
+.add-customer-button:hover {
+    background-color: #86B6F6;
+    color: white;
+    box-shadow: 0 3px 8px #176B87;
+}
+
+.card {
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s ease;
 }
 
 .customer-ids {
@@ -86,6 +108,12 @@
     border-spacing: 0;
     border-radius: 8px;
     overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.table:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s ease;
 }
 
 .table thead th {
@@ -125,6 +153,11 @@
     border-radius: 5px !important;
 }
 
+.button-item-card:hover {
+    background-color: #176B87;
+    color: white;
+}
+
 .item-ids {
     height: 45px;
 }
@@ -133,6 +166,13 @@
     background-color: #176B87;
     color: white;
     width: 180px;
+    transition: box-shadow 0.3s;
+}
+
+.add-item-button:hover {
+    background-color: #86B6F6;
+    color: white;
+    box-shadow: 0 3px 8px #176B87;
 }
 
 /* please order*/
