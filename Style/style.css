@@ -101,6 +101,11 @@
     height: 45px;
 }
 
+#update_and_delete_customer {
+    display: flex;
+    gap: 30px;
+}
+
 .table {
     width: 100%;
     margin-top: 20px;
