@@ -230,11 +230,11 @@
                     <div class="input-item-name input-group p-4">
                         <span class="input-span input-group-text" id="basic-addon2">Input</span>
                         <input type="text" class=" form-control" placeholder="Item name" aria-label="Item name"
-                               aria-describedby="basic-addon1">
+                               aria-describedby="basic-addon1" id="search_item_input">
                     </div>
                     <div class="card-buttons card-body btn-group p-4">
-                        <button type="button" class="button-item-card button btn m-1">Search</button>
-                        <button type="button" class="button-item-card button btn m-1">Clear</button>
+                        <button type="button" class="button-item-card button btn m-1" id="btn-item-search">Search</button>
+                        <button type="button" class="button-item-card button btn m-1" id="btn-item-search-clear">Clear</button>
                     </div>
                 </div>
             </div>
@@ -256,11 +256,6 @@
                                         aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <!--                                <div class="mb-2">-->
-                                <!--                                    <label for="ItemIdInput" class="form-label lable-from">Item Id:</label>-->
-                                <!--                                    <input type="text" class="form-control" id="ItemIdInput" aria-describedby="emailHelp"-->
-                                <!--                                           placeholder="Enter Item Id">-->
-                                <!--                                </div>-->
                                 <div class="mb-2">
                                     <label for="item_name" class="form-label lable-from">Item Name:</label>
                                     <input type="text" class="form-control" id="item_name" aria-describedby="emailHelp"
@@ -287,6 +282,53 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop04" data-bs-backdrop="static" data-bs-keyboard="false"
+                     tabindex="-1" aria-labelledby="staticBackdropLabel04" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel04">Add New Item</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-2">
+                                    <label for="update_item_code" class="form-label lable-from">Item Code:</label>
+                                    <input type="text" class="form-control" id="update_item_code" aria-describedby="emailHelp"
+                                           placeholder="Enter Item Code">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="update_item_name" class="form-label lable-from">Item Name:</label>
+                                    <input type="text" class="form-control" id="update_item_name" aria-describedby="emailHelp"
+                                           placeholder="Enter Item Name">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="update_item_price" class="form-label lable-from">Item Price:</label>
+                                    <input type="text" class="form-control" id="update_item_price" aria-describedby="emailHelp"
+                                           placeholder="Enter Item Price">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="update_item_quantity" class="form-label lable-from">Customer Contact:</label>
+                                    <input type="text" class="form-control" id="update_item_quantity"
+                                           aria-describedby="emailHelp" placeholder="Enter Item Quantity">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                        id="update_item-btn_close">Close
+                                </button>
+                                <button type="button" class="btn btn-primary" id="update_item">Update</button>
+                                <button type="button" class="btn btn-primary" id="delete_item">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="row">

@@ -90,8 +90,6 @@ $(`#save_customer`).on('click', function(){
 
         customer_db.push(customer_data);
 
-        console.log(customer_db);
-
         loadCustomers();
 
         Swal.fire({
@@ -139,6 +137,33 @@ $('#update_customer').on('click', function () {
 
     }
 })
+
+// delete customer
+
+$('#delete_customer').on('click', function () {
+    let idx = $('.selected').data('index');
+
+    if (idx === undefined) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please select a customer to delete',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+    } else {
+        customer_db.splice(idx, 1); // idx eke idan item 1k delete karanna
+
+        loadCustomers();
+
+        Swal.fire({
+            title: "Deleted Successfully!",
+            icon: "success",
+            draggable: true
+        });
+
+        $('#staticBackdrop02').modal('hide');
+    }
+});
 
 // select customer
 
