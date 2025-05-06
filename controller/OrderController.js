@@ -126,27 +126,27 @@ $('#button-add-item').on('click', function() { // add items to table
 });
 
 
-// $('#select-items-table-body').on('click', 'tr', function() {
-//     const row = $(this);
-//     Swal.fire({
-//         title: "Are you sure?",
-//         text: "You won't be able to revert this!",
-//         icon: "warning",
-//         showCancelButton: true,
-//         confirmButtonColor: "#3085d6",
-//         cancelButtonColor: "#d33",
-//         confirmButtonText: "Yes, delete it!"
-//     }).then((result) => {
-//         if (result.isConfirmed) {
-//             row.remove(); // Delete the clicked row
-//             Swal.fire({
-//                 title: "Deleted!",
-//                 text: "Item has been deleted.",
-//                 icon: "success"
-//             });
-//         }
-//     });
-// });
+$('#select-items-table-body').on('click', 'tr', function() {
+    const row = $(this);
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            row.remove(); // Delete the clicked row
+            Swal.fire({
+                title: "Deleted!",
+                text: "Item has been deleted.",
+                icon: "success"
+            });
+        }
+    });
+});
 
 
 
