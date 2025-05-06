@@ -62,68 +62,68 @@ function loadItemIds() {
     });
 }
 
-// $('#button-add-item').on('click', function() { // add items to table
-//     const itemCode = $('#ItemId').val();
-//     const itemName = $('#ItemName').val();
-//     const itemPrice = $('#Price').val();
-//     const quantity = $('#Order-Quantity').val();
-//
-//     if (itemCode === '' || itemName === '' || itemPrice === '' || quantity === '') {
-//         Swal.fire({
-//             title: 'Error!',
-//             text: 'Invalid Inputs',
-//             icon: 'error',
-//             confirmButtonText: 'Ok'
-//         });
-//         return;
-//     }
-//
-//     const price = parseFloat(itemPrice);
-//     const qty = parseInt(quantity);
-//
-//     let existingRow = null;
-//     $('#select-items-table-body tr').each(function() {
-//         const existingItemCode = $(this).find('td:first').text();
-//         if (existingItemCode === itemCode) {
-//             existingRow = $(this);
-//             return false;
-//         }
-//     }); // add karana item eke id eka already table eke thiyanawada balanawa...
-//
-//     if (existingRow) {
-//         // Update existing row
-//         const currentQty = parseInt(existingRow.find('td:nth-child(4)').text());
-//         const newQty = currentQty + qty;
-//         const newTotal = price * newQty;
-//
-//         // Update the row with new price, quantity, and total
-//         existingRow.find('td:nth-child(3)').text(price); // Update price
-//         existingRow.find('td:nth-child(4)').text(newQty); // Update quantity
-//         existingRow.find('td:nth-child(5)').text(newTotal); // Update total
-//
-//     } else {
-//
-//         const itemTotal = price * qty;
-//         const newRow = `
-//             <tr>
-//                 <td>${itemCode}</td>
-//                 <td>${itemName}</td>
-//                 <td>${itemPrice}</td>
-//                 <td>${quantity}</td>
-//                 <td>${itemTotal}</td>
-//             </tr>
-//         `;
-//         $('#select-items-table-body').append(newRow);
-//     }
-//
-//     $('#ItemId').val('');
-//     $('#ItemName').val('');
-//     $('#Price').val('');
-//     $('#Quantity').val('');
-//     $('#Order-Quantity').val('');
-//
-//
-// });
+$('#button-add-item').on('click', function() { // add items to table
+    const itemCode = $('#ItemId').val();
+    const itemName = $('#ItemName').val();
+    const itemPrice = $('#Price').val();
+    const quantity = $('#Order-Quantity').val();
+
+    if (itemCode === '' || itemName === '' || itemPrice === '' || quantity === '') {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Invalid Inputs',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+        return;
+    }
+
+    const price = parseFloat(itemPrice);
+    const qty = parseInt(quantity);
+
+    let existingRow = null;
+    $('#select-items-table-body tr').each(function() {
+        const existingItemCode = $(this).find('td:first').text();
+        if (existingItemCode === itemCode) {
+            existingRow = $(this);
+            return false;
+        }
+    }); // add karana item eke id eka already table eke thiyanawada balanawa...
+
+    if (existingRow) {
+        // Update existing row
+        const currentQty = parseInt(existingRow.find('td:nth-child(4)').text());
+        const newQty = currentQty + qty;
+        const newTotal = price * newQty;
+
+        // Update the row with new price, quantity, and total
+        existingRow.find('td:nth-child(3)').text(price); // Update price
+        existingRow.find('td:nth-child(4)').text(newQty); // Update quantity
+        existingRow.find('td:nth-child(5)').text(newTotal); // Update total
+
+    } else {
+
+        const itemTotal = price * qty;
+        const newRow = `
+            <tr>
+                <td>${itemCode}</td>
+                <td>${itemName}</td>
+                <td>${itemPrice}</td>
+                <td>${quantity}</td>
+                <td>${itemTotal}</td>
+            </tr>
+        `;
+        $('#select-items-table-body').append(newRow);
+    }
+
+    $('#ItemId').val('');
+    $('#ItemName').val('');
+    $('#Price').val('');
+    $('#Quantity').val('');
+    $('#Order-Quantity').val('');
+
+
+});
 
 
 // $('#select-items-table-body').on('click', 'tr', function() {
