@@ -148,14 +148,34 @@ $('#delete_item').on('click', function () {
             confirmButtonText: 'Ok'
         });
     } else {
-        item_db.splice(idx, 1); // idx eke idan item 1k delete karanna
-
-        loadItems();
+        // item_db.splice(idx, 1); // idx eke idan item 1k delete karanna
+        //
+        // loadItems();
+        //
+        // Swal.fire({
+        //     title: "Deleted Successfully!",
+        //     icon: "success",
+        //     draggable: true
+        // });
 
         Swal.fire({
-            title: "Deleted Successfully!",
-            icon: "success",
-            draggable: true
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                item_db.splice(idx, 1); // idx eke idan item 1k delete karanna
+                loadItems();
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Customer has been deleted.",
+                    icon: "success"
+                });
+            }
         });
 
         $('#staticBackdrop04').modal('hide');

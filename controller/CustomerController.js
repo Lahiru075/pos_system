@@ -10,14 +10,12 @@ function loadCustomers(){
         let name = item.name;
         let address = item.address;
         let contact = item.contact;
-        let salary = item.salary;
 
         let data = `<tr data-index="${index}"> 
                                 <td>${index + 1}</td>
                                 <td>${name}</td>
                                 <td>${address}</td>
                                 <td>${contact}</td>     
-                                <td>${salary}</td>                  
                             </tr>`
 
         $('#customer_table_body').append(data);
@@ -50,7 +48,6 @@ $(`#button-search`).on('click', function(){
                            <td>${item.name}</td>
                            <td>${item.address}</td>
                            <td>${item.contact}</td>
-                           <td>${item.salary}</td>
                        </tr>`;
             $('#customer_table_body').append(row);
         }
@@ -71,11 +68,8 @@ $(`#save_customer`).on('click', function(){
     let name = $('#customer_name').val();
     let address = $('#customer_address').val();
     let contact = $('#customer_contact').val();
-    let salary = $('#customer_salary').val();
 
-    console.log(name)
-
-    if (name === '' || address === '' || contact === '' || salary === '') {
+    if (name === '' || address === '' || contact === '') {
 
         Swal.fire({
             title: 'Error!',
@@ -86,7 +80,7 @@ $(`#save_customer`).on('click', function(){
 
     } else {
 
-        let customer_data = new CustomerModel(name, address, contact, salary);
+        let customer_data = new CustomerModel(name, address, contact);
 
         customer_db.push(customer_data);
 
@@ -101,7 +95,6 @@ $(`#save_customer`).on('click', function(){
         $('#customer_name').val("");
         $('#customer_address').val("");
         $('#customer_contact').val("");
-        $('#customer_salary').val("");
 
     }
 })
@@ -113,9 +106,8 @@ $('#update_customer').on('click', function () {
     let name = $('#update_customer_name').val();
     let address = $('#update_customer_address').val();
     let contact = $('#update_customer_contact').val();
-    let salary = $('#update_customer_salary').val();
 
-    if (name === '' || address === '' || contact === '' || salary === '') {
+    if (name === '' || address === '' || contact === '') {
         Swal.fire({
             title: 'Error!',
             text: 'Invalid Inputs',
@@ -123,7 +115,7 @@ $('#update_customer').on('click', function () {
             confirmButtonText: 'Ok'
         });
     } else {
-        customer_db[idx] = new CustomerModel(name, address, contact, salary);
+        customer_db[idx] = new CustomerModel(name, address, contact);
 
         loadCustomers();
 
@@ -151,14 +143,34 @@ $('#delete_customer').on('click', function () {
             confirmButtonText: 'Ok'
         });
     } else {
-        customer_db.splice(idx, 1); // idx eke idan item 1k delete karanna
-
-        loadCustomers();
+        // customer_db.splice(idx, 1); // idx eke idan item 1k delete karanna
+        //
+        // loadCustomers();
+        //
+        // Swal.fire({
+        //     title: "Deleted Successfully!",
+        //     icon: "success",
+        //     draggable: true
+        // });
 
         Swal.fire({
-            title: "Deleted Successfully!",
-            icon: "success",
-            draggable: true
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                customer_db.splice(idx, 1); // idx eke idan item 1k delete karanna
+                loadCustomers();
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Customer has been deleted.",
+                    icon: "success"
+                });
+            }
         });
 
         $('#staticBackdrop02').modal('hide');
@@ -179,14 +191,11 @@ $('#customer_table_body').on('click', 'tr', function () {
     let name = obj.name;
     let address = obj.address;
     let contact = obj.contact;
-    let salary = obj.salary;
 
     $('#update_customer_id').val(id);
     $('#update_customer_name').val(name);
     $('#update_customer_address').val(address);
     $('#update_customer_contact').val(contact);
-    $('#update_customer_salary').val(salary);
-
 
     $('#staticBackdrop02').modal('show');
 });
@@ -197,5 +206,4 @@ $('#customer-btn_close').on('click', function () {
     $('#customer_name').val("");
     $('#customer_address').val("");
     $('#customer_contact').val("");
-    $('#customer_salary').val("");
 })

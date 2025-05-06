@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0128a477-63fc-4fe5-8d46-0bb7207ed7db" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Style/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/CustomerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/CustomerController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/ItemController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/ItemController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/OrderController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/OrderController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +27,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/index.html" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -87,7 +91,20 @@
       <workItem from="1746116028863" duration="3000" />
       <workItem from="1746167045771" duration="11529000" />
       <workItem from="1746199756446" duration="13556000" />
-      <workItem from="1746258935699" duration="4312000" />
+      <workItem from="1746258935699" duration="6655000" />
+      <workItem from="1746271450640" duration="4285000" />
+      <workItem from="1746281498241" duration="2361000" />
+      <workItem from="1746286881491" duration="5060000" />
+      <workItem from="1746363417054" duration="14000" />
+      <workItem from="1746364338166" duration="4004000" />
+      <workItem from="1746383555712" duration="87000" />
+      <workItem from="1746383690649" duration="6000" />
+      <workItem from="1746385374665" duration="63000" />
+      <workItem from="1746416725128" duration="258000" />
+      <workItem from="1746417126899" duration="189000" />
+      <workItem from="1746417977280" duration="21000" />
+      <workItem from="1746441201143" duration="1584000" />
+      <workItem from="1746505088953" duration="35000" />
     </task>
     <servers />
   </component>
