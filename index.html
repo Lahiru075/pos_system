@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="Style/style.css">
     <link rel="stylesheet" href="Assets/lib/normalize.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
 </head>
 <body>
 
@@ -30,6 +31,8 @@
                             <button id="customer_nav" class="text nav-item btn btn-link">Customer</button>
                             <button id="item_nav" class="text nav-item btn btn-link">Item</button>
                             <button id="order_nav" class="text nav-item btn btn-link">Place Order</button>
+                            <button id="order_detail_nav" class="text nav-item btn btn-link">Place Order History
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -417,7 +420,9 @@
                                        aria-describedby="emailHelp">
                             </div>
                             <div class="d-grid">
-                                <button type="button" id="button-add-item" class="button-add-item btn btn-danger">Add Item</button>
+                                <button type="button" id="button-add-item" class="button-add-item btn btn-danger">Add
+                                    Item
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -428,14 +433,13 @@
                     <div class="custom-card-body card-body">
                         <form class="p-4 border rounded shadow-sm bg-white">
                             <div class="mb-3 d-flex justify-content-between">
-                                <label class="form-label total fw-bold fs-5">Total:</label>
-                                <span class="fw-bold fs-5">00000 Rs/=</span>
+                                <label class="form-label total fw-bold fs-5">Sub Total:</label>
+                                <span id="text-sub-total" class="fw-bold fs-5"></span>
                             </div>
                             <div class="mb-3 d-flex justify-content-between">
-                                <label class="form-label total fw-bold fs-5">Sub Total:</label>
-                                <span class="fw-bold fs-5">00000 Rs/=</span>
+                                <label class="form-label total fw-bold fs-5">Total:</label>
+                                <span id="text-total" class="fw-bold fs-5"></span>
                             </div>
-
                             <div class="mb-3">
                                 <label for="cash" class="form-label lable-from">Cash:</label>
                                 <input type="text" class="form-control" id="cash" aria-describedby="emailHelp">
@@ -518,6 +522,40 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- place order history section -->
+<section id="order-history-section">
+    <div class="item container-fluid text-center">
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Order Id</th>
+                        <th scope="col">Customer Id</th>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Item Code</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>O001</th>
+                        <td>C001</td>
+                        <td>Lahiru</td>
+                        <td>I001</td>
+                        <td>Soup</td>
+                        <td>270.00</td>
+                        <td>2</td>
+                        <td>540.00</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>

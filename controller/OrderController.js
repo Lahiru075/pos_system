@@ -1,4 +1,4 @@
-import { customer_db } from "../db/Db.js";
+import {customer_db} from "../db/Db.js";
 import {item_db} from "../db/Db.js";
 
 let row = null;
@@ -9,7 +9,7 @@ function loadCustomerIds() {
     dropdown.append('<option value="" disabled selected></option>');
 
     console.log("customer_db:", customer_db);
-    console.log(customer_db.length)
+    console.log(customer_db.length);
 
     customer_db.map((customer, index) => {
         console.log(index);
@@ -19,13 +19,13 @@ function loadCustomerIds() {
 
     dropdown.on('change', function () {
         const selectedId = $(this).val();
-        if (selectedId){
+        if (selectedId) {
             const customerIndex = parseInt(selectedId) - 1;
             const customer = customer_db[customerIndex];
 
             $('#CustomerName').val(customer.name);
             $('#CustomerAddress').val(customer.address);
-        }else {
+        } else {
             $('#CustomerName').val('');
             $('#CustomerAddress').val('');
         }
@@ -49,14 +49,24 @@ function loadItemIds() {
 
     dropdown.on('change', function () {
         const selectedId = $(this).val();
-        if (selectedId){
+        if (selectedId) {
             const itemIndex = parseInt(selectedId) - 1;
             const item = item_db[itemIndex];
 
             $('#ItemName').val(item.name);
             $('#Price').val(item.price);
-            $('#Quantity').val(item.quantity);
-        }else {
+
+            let itemName = item.name;
+
+            item_db.forEach((item) => {
+                if (item.name === itemName) {
+                    $('#Quantity').val(item.quantity);
+                    console.log(item.quantity);
+                    return;
+                }
+            })
+
+        } else {
             $('#ItemName').val('');
             $('#Price').val('');
             $('#Quantity').val('');
@@ -64,11 +74,19 @@ function loadItemIds() {
     });
 }
 
-$('#button-add-item').on('click', function() { // add items to table
+$('#button-add-item').on('click', function () { // add items to table
     const itemCode = $('#ItemId').val();
     const itemName = $('#ItemName').val();
     const itemPrice = $('#Price').val();
     const quantity = $('#Order-Quantity').val();
+
+    let idx = 0;
+
+    item_db.forEach((item, index) => {
+        if (itemName === item.name) {
+            idx = index;
+        }
+    })
 
     if (itemCode === '' || itemName === '' || itemPrice === '' || quantity === '') {
         Swal.fire({
@@ -83,8 +101,18 @@ $('#button-add-item').on('click', function() { // add items to table
     const price = parseFloat(itemPrice);
     const qty = parseInt(quantity);
 
+    if (qty > item_db[idx].quantity) {
+        Swal.fire({
+            title: 'Error!',
+            text: `Only ${item_db[idx].quantity} units available for ${itemCode}.`,
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+        return;
+    }
+
     let existingRow = null;
-    $('#select-items-table-body tr').each(function() {
+    $('#select-items-table-body tr').each(function () {
         const existingItemCode = $(this).find('td:first').text();
         if (existingItemCode === itemCode) {
             existingRow = $(this);
@@ -97,6 +125,16 @@ $('#button-add-item').on('click', function() { // add items to table
         const currentQty = parseInt(existingRow.find('td:nth-child(4)').text());
         const newQty = currentQty + qty;
         const newTotal = price * newQty;
+
+        if (newQty > item_db.quantity) {
+            Swal.fire({
+                title: 'Error!',
+                text: `Only ${item_db.quantity} units available for ${itemCode}.`,
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            });
+            return;
+        }
 
         // Update the row with new price, quantity, and total
         existingRow.find('td:nth-child(3)').text(price); // Update price
@@ -118,6 +156,10 @@ $('#button-add-item').on('click', function() { // add items to table
         $('#select-items-table-body').append(newRow);
     }
 
+    item_db[idx].quantity -= qty;
+
+    updateTotals();
+
     $('#ItemId').val('');
     $('#ItemName').val('');
     $('#Price').val('');
@@ -127,8 +169,21 @@ $('#button-add-item').on('click', function() { // add items to table
 
 });
 
+function updateTotals() {
+    let total = 0;
 
-$('#select-items-table-body').on('click', 'tr', function() {
+    // Iterate through each row in the table
+    $('#select-items-table-body tr').each(function () {
+        const rowTotal = parseFloat($(this).find('td:nth-child(5)').text()) || 0;
+        total += rowTotal;
+    });
+
+    // Update the total and sub-total display
+    $('#text-sub-total').text(total.toFixed(2)); // Assuming sub-total is same as total for now
+}
+
+
+$('#select-items-table-body').on('click', 'tr', function () {
     row = $(this);
     $('#select-items-table-body tr').removeClass('selected');
     $(this).addClass('selected');
@@ -152,11 +207,21 @@ $('#select-items-table-body').on('click', 'tr', function() {
 });
 
 
-$('#order_item_update').on('click', function() {
+$('#order_item_update').on('click', function () {
     const code = $('#update-order-item-code').val();
     const name = $('#update-order-item-name').val();
     const price = $('#update-order-item-price').val();
     const qty = $('#update-order-item-qty').val();
+    let currentQty = parseInt(row.find('td:nth-child(4)').text());
+
+
+    let idx = 0;
+
+    item_db.forEach((item, index) => {
+        if (name === item.name) {
+            idx = index;
+        }
+    })
 
     if (code === '' || name === '' || price === '' || qty === '') {
         Swal.fire({
@@ -167,6 +232,21 @@ $('#order_item_update').on('click', function() {
         });
         return;
     }
+
+    if (qty > item_db[idx].quantity) {
+        Swal.fire({
+            title: 'Error!',
+            text: `Only ${item_db[idx].quantity} units available for ${itemCode}.`,
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+        return;
+    }
+
+    let updatedQuantity = (item_db[idx].quantity + currentQty) - qty;
+
+    item_db[idx].quantity = updatedQuantity;
+
 
     const priceNum = parseFloat(price);
     const qtyNum = parseInt(qty);
@@ -183,7 +263,7 @@ $('#order_item_update').on('click', function() {
 
 });
 
-$('#order_item_delete').on('click', function() {
+$('#order_item_delete').on('click', function () {
     Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -204,6 +284,42 @@ $('#order_item_delete').on('click', function() {
         }
     });
 })
+
+function applyDiscount() {
+    const discountInput = $('#Discount').val().trim();
+    let discountAmount = 0;
+
+    discountAmount = parseFloat(discountInput) || 0;
+
+    let subTotal = parseFloat($('#text-sub-total').text() || 0);
+
+    let total = subTotal - discountAmount;
+
+    $('#text-total').text(total.toFixed(2));
+}
+
+$('#Discount').on('input', function () {
+    applyDiscount();
+});
+
+function balanceCalculate() {
+    const cashInput = $('#cash').val().trim();
+    const totalInput = $('#text-total').text().trim() || 0;
+
+    let cashAmount = 0;
+    let total = parseFloat(totalInput) || 0;
+
+    cashAmount = parseFloat(cashInput) || 0;
+
+    let balance = cashAmount - total;
+
+    $('#Balance').val(balance.toFixed(2));
+
+}
+
+$('#cash').on('input', function () {
+    balanceCalculate();
+});
 
 
 
