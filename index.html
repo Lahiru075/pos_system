@@ -303,8 +303,8 @@
                                            placeholder="Enter Item Price">
                                 </div>
                                 <div class="mb-2">
-                                    <label for="update_item_quantity" class="form-label lable-from">Customer
-                                        Contact:</label>
+                                    <label for="update_item_quantity" class="form-label lable-from">Item
+                                        Quantity:</label>
                                     <input type="text" class="form-control" id="update_item_quantity"
                                            aria-describedby="emailHelp" placeholder="Enter Item Quantity">
                                 </div>
@@ -474,6 +474,49 @@
                     <tbody id="select-items-table-body">
                     </tbody>
                 </table>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop05" data-bs-backdrop="static" data-bs-keyboard="false"
+             tabindex="-1"
+             aria-labelledby="staticBackdropLabel01" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel05">Add New Customer</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-2">
+                            <label for="update-order-item-code" class="form-label lable-from">Item Code:</label>
+                            <input type="text" class="form-control" id="update-order-item-code"
+                                   aria-describedby="emailHelp" placeholder="Enter Item Code">
+                        </div>
+                        <div class="mb-2">
+                            <label for="update-order-item-name" class="form-label lable-from">Item Name:</label>
+                            <input type="text" class="form-control" id="update-order-item-name"
+                                   aria-describedby="emailHelp" placeholder="Enter item Name">
+                        </div>
+                        <div class="mb-2">
+                            <label for="update-order-item-price" class="form-label lable-from">Item Price:</label>
+                            <input type="text" class="form-control" id="update-order-item-price"
+                                   aria-describedby="emailHelp" placeholder="Enter Item price">
+                        </div>
+                        <div class="mb-2">
+                            <label for="update-order-item-qty" class="form-label lable-from">Item Quantity:</label>
+                            <input type="text" class="form-control" id="update-order-item-qty"
+                                   aria-describedby="emailHelp" placeholder="Enter Item Quantity">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                id="order-item-btn_close">Close
+                        </button>
+                        <button type="button" class="btn btn-primary" id="order_item_update">Update</button>
+                        <button type="button" class="btn btn-primary" id="order_item_delete">Delete</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

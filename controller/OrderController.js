@@ -1,6 +1,8 @@
 import { customer_db } from "../db/Db.js";
 import {item_db} from "../db/Db.js";
 
+let row = null;
+
 function loadCustomerIds() {
     const dropdown = $('#CustomerId');
     dropdown.empty();
@@ -127,7 +129,61 @@ $('#button-add-item').on('click', function() { // add items to table
 
 
 $('#select-items-table-body').on('click', 'tr', function() {
-    const row = $(this);
+    row = $(this);
+    $('#select-items-table-body tr').removeClass('selected');
+    $(this).addClass('selected');
+
+    const code = row.find('td:nth-child(1)').text();
+    const name = row.find('td:nth-child(2)').text();
+    const price = row.find('td:nth-child(3)').text();
+    const qty = row.find('td:nth-child(4)').text();
+
+    $('#update-order-item-code').prop('readonly', true); // code eka change karanna behe..
+    $('#update-order-item-name').prop('readonly', true);
+    $('#update-order-item-price').prop('readonly', true);
+
+
+    $('#update-order-item-code').val(code);
+    $('#update-order-item-name').val(name);
+    $('#update-order-item-price').val(price);
+    $('#update-order-item-qty').val(qty);
+
+    $('#staticBackdrop05').modal('show');
+});
+
+
+$('#order_item_update').on('click', function() {
+    const code = $('#update-order-item-code').val();
+    const name = $('#update-order-item-name').val();
+    const price = $('#update-order-item-price').val();
+    const qty = $('#update-order-item-qty').val();
+
+    if (code === '' || name === '' || price === '' || qty === '') {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Invalid Inputs',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+        return;
+    }
+
+    const priceNum = parseFloat(price);
+    const qtyNum = parseInt(qty);
+    const newTotal = priceNum * qtyNum;
+
+    row.find('td:nth-child(1)').text(code);
+    row.find('td:nth-child(2)').text(name);
+    row.find('td:nth-child(3)').text(price);
+    row.find('td:nth-child(4)').text(qty);
+    row.find('td:nth-child(5)').text(newTotal);
+
+    $('#staticBackdrop05').modal('hide');
+
+
+});
+
+$('#order_item_delete').on('click', function() {
     Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -144,10 +200,10 @@ $('#select-items-table-body').on('click', 'tr', function() {
                 text: "Item has been deleted.",
                 icon: "success"
             });
+            $('#staticBackdrop05').modal('hide');
         }
     });
-});
-
+})
 
 
 
