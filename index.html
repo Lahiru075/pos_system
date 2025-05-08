@@ -455,7 +455,8 @@
                                        aria-describedby="emailHelp">
                             </div>
                             <div class="div-button-purchase">
-                                <button type="button" class="button-purchase btn btn-success btn-lg">Purchase
+                                <button type="button" id="button-purchase"
+                                        class="button-purchase btn btn-success btn-lg">Purchase
                                 </button>
                             </div>
                         </form>
@@ -528,10 +529,11 @@
 
 <!-- place order history section -->
 <section id="order-history-section">
-    <div class="item container-fluid text-center">
+    <div class="container-fluid text-center">
         <div class="row">
-            <table class="table">
-                <thead>
+            <div class="order-history-table">
+                <table class="table">
+                    <thead class="order-history-head">
                     <tr>
                         <th scope="col">Order Id</th>
                         <th scope="col">Customer Id</th>
@@ -542,20 +544,12 @@
                         <th scope="col">Quantity</th>
                         <th scope="col">Total</th>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>O001</th>
-                        <td>C001</td>
-                        <td>Lahiru</td>
-                        <td>I001</td>
-                        <td>Soup</td>
-                        <td>270.00</td>
-                        <td>2</td>
-                        <td>540.00</td>
-                    </tr>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody id="order-history-table-body">
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </section>

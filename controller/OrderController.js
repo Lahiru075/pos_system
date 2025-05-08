@@ -1,7 +1,11 @@
 import {customer_db} from "../db/Db.js";
 import {item_db} from "../db/Db.js";
+import {order_db} from "../db/Db.js";
+import OrderModel from "../model/OrderModel.js";
 
 let row = null;
+
+$('#OrderId').val(order_db.length + 1).prop('readonly', true);
 
 function loadCustomerIds() {
     const dropdown = $('#CustomerId');
@@ -321,7 +325,94 @@ $('#cash').on('input', function () {
     balanceCalculate();
 });
 
+function loadAllOrders() {
 
+    $('#order-history-table-body').empty();
+
+    order_db.map((order, index) => {
+        let customerId = order.customerId;
+        let customerName = order.customerName;
+        let itemCode = order.itemCode;
+        let itemName = order.itemName;
+        let price = order.price;
+        let quantity = order.quantity;
+        let total = order.total;
+
+        // Create new row for order table
+        const newRow = `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${customerId}</td>
+                <td>${customerName}</td>
+                <td>${itemCode}</td>
+                <td>${itemName}</td>
+                <td>${price}</td>
+                <td>${quantity}</td>
+                <td>${total}</td>
+            </tr>
+        `;
+
+        // Append to order table
+        $('#order-history-table-body').append(newRow);
+
+    })
+
+}
+
+
+$('#button-purchase').on('click', function () {
+
+    console.log("click nam wenawa")
+
+    // Check if cart is empty
+    if ($('#select-items-table-body tr').length === 0) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Cart is empty. Add items to proceed.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        });
+        return;
+    }
+
+    const customerId = $('#CustomerId').val().trim();
+    const customerName = $('#CustomerName').val().trim();
+
+
+    $('#select-items-table-body tr').each(function () {
+        const itemCode = $(this).find('td:nth-child(1)').text();
+        const itemName = $(this).find('td:nth-child(2)').text();
+        const price = $(this).find('td:nth-child(3)').text();
+        const quantity = $(this).find('td:nth-child(4)').text();
+        const total = $(this).find('td:nth-child(5)').text();
+
+        let order_model = new OrderModel(customerId, customerName, itemCode, itemName, price, quantity, total);
+
+        order_db.push(order_model);
+
+    });
+
+    $('#select-items-table-body').empty();
+
+    $('#OrderId').val(order_db.length + 1);
+    $('#text-total').text('0.00');
+    $('#text-sub-total').text('0.00');
+    $('#Discount').val('');
+    $('#Balance').val('');
+    $('#CustomerId').val('');
+    $('#CustomerName').val('');
+
+    loadAllOrders();
+
+    // Show success message
+    Swal.fire({
+        title: 'Success!',
+        text: 'Order placed successfully.',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+    });
+
+});
 
 
 export {loadCustomerIds}
