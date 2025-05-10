@@ -331,9 +331,8 @@ function loadAllOrders() {
 
     order_db.map((order, index) => {
         let customerId = order.customerId;
-        let customerName = order.customerName;
+        let orderDate = order.orderDate;
         let itemCode = order.itemCode;
-        let itemName = order.itemName;
         let price = order.price;
         let quantity = order.quantity;
         let total = order.total;
@@ -343,12 +342,11 @@ function loadAllOrders() {
             <tr>
                 <td>${index + 1}</td>
                 <td>${customerId}</td>
-                <td>${customerName}</td>
                 <td>${itemCode}</td>
-                <td>${itemName}</td>
                 <td>${price}</td>
                 <td>${quantity}</td>
                 <td>${total}</td>
+                <td>${orderDate}</td>
             </tr>
         `;
 
@@ -376,17 +374,16 @@ $('#button-purchase').on('click', function () {
     }
 
     const customerId = $('#CustomerId').val().trim();
-    const customerName = $('#CustomerName').val().trim();
 
 
     $('#select-items-table-body tr').each(function () {
         const itemCode = $(this).find('td:nth-child(1)').text();
-        const itemName = $(this).find('td:nth-child(2)').text();
         const price = $(this).find('td:nth-child(3)').text();
         const quantity = $(this).find('td:nth-child(4)').text();
         const total = $(this).find('td:nth-child(5)').text();
+        const orderDate = $('#date').val();
 
-        let order_model = new OrderModel(customerId, customerName, itemCode, itemName, price, quantity, total);
+        let order_model = new OrderModel(orderDate, customerId, itemCode, price, quantity, total);
 
         order_db.push(order_model);
 
@@ -398,9 +395,12 @@ $('#button-purchase').on('click', function () {
     $('#text-total').text('0.00');
     $('#text-sub-total').text('0.00');
     $('#Discount').val('');
+    $('#cash').val('');
     $('#Balance').val('');
     $('#CustomerId').val('');
     $('#CustomerName').val('');
+    $('#date').val('');
+    $('#CustomerAddress').val('');
 
     loadAllOrders();
 
@@ -411,6 +411,26 @@ $('#button-purchase').on('click', function () {
         icon: 'success',
         confirmButtonText: 'Ok'
     });
+
+});
+
+$('#clear').click(function () {
+    $('#OrderId').val(order_db.length + 1).prop('readonly', true);
+    $('#CustomerId').val('');
+    $('#CustomerName').val('');
+    $('#date').val('');
+    $('#CustomerAddress').val('');
+    $('#ItemId').val('');
+    $('#ItemName').val('');
+    $('#Price').val('');
+    $('#Quantity').val('');
+    $('#Discount').val('');
+    $('#Balance').val('');
+    $('#cash').val('');
+    $('#Order-Quantity').val('');
+    $('#text-total').text('0.00');
+    $('#text-sub-total').text('0.00');
+    $('#select-items-table-body').empty();
 
 });
 

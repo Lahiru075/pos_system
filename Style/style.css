@@ -1,6 +1,7 @@
 
 body {
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
 }
 
 /* header section */
@@ -600,6 +601,17 @@ body {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
+#clear {
+    background-color: #B5A8D5 !important;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 0.7rem 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
 .button-add-item:hover {
     background-color: #1976D2 !important;
     transform: translateY(-2px);
@@ -652,3 +664,15 @@ body {
     background-color: #d32f2f;
 }
 
+/* order history section */
+
+#order-history-section {
+    background-color: #f5f8ff;
+    height: 90vh;
+    padding: 2rem 0;
+}
+
+.order-search {
+    display: flex !important;
+    justify-content: center !important;
+}
