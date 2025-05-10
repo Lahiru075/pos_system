@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Pos system</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="Style/style.css">
     <link rel="stylesheet" href="Assets/lib/normalize.css">
+    <link rel="icon" href="Assets/payment.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
@@ -275,7 +276,6 @@
             </div>
 
             <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
-
                 <!-- Modal -->
                 <div class="modal fade" id="staticBackdrop04" data-bs-backdrop="static" data-bs-keyboard="false"
                      tabindex="-1" aria-labelledby="staticBackdropLabel04" aria-hidden="true">
@@ -326,9 +326,9 @@
         </div>
 
         <div class="row text-center">
-            <div class="customer-table">
+            <div class="item-table">
                 <table class="table">
-                    <thead class="customer-table-head">
+                    <thead class="item-table-head">
                     <tr>
                         <th scope="col">Code</th>
                         <th scope="col">Name</th>
@@ -419,9 +419,12 @@
                                 <input type="text" class="form-control" id="Order-Quantity"
                                        aria-describedby="emailHelp">
                             </div>
-                            <div class="d-grid">
+                            <div class="add-item-and-clear-button d-grid">
                                 <button type="button" id="button-add-item" class="button-add-item btn btn-danger">Add
                                     Item
+                                </button>
+                                <button type="button" id="clear" class="button-add-item-clear btn btn-danger mt-4">
+                                    Clear
                                 </button>
                             </div>
                         </form>
@@ -464,7 +467,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 mb-4 text-center">
+        <div class="row text-center">
             <div class="order-table">
                 <table class="table">
                     <thead class="table">
@@ -529,20 +532,48 @@
 
 <!-- place order history section -->
 <section id="order-history-section">
-    <div class="container-fluid text-center">
+    <div class="div-card container-fluid text-center">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="topic">Order History</h2>
+            </div>
+        </div>
+        <div class="order-search row align-items-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-8 col-xl-7 col-xxl-7">
+                <div class="card customer-card mb-4 mt-3">
+                    <div class="card-header text-dark">
+                        <h5>Search Customer Order</h5>
+                    </div>
+                    <div class="input-customer-name input-group p-4">
+                        <span class="input-span input-group-text" id="basic-addon3">Input</span>
+                        <input type="text" id="search_customer_id_input" class=" form-control"
+                               placeholder="Customer name"
+                               aria-label="Customer name"
+                               aria-describedby="basic-addon3">
+                    </div>
+                    <div class="card-buttons card-body btn-group p-4">
+                        <button type="button" class="button-customer-card btn m-1" id="button-search-customer-order">
+                            Search
+                        </button>
+                        <button type="button" class="button-customer-card btn m-1"
+                                id="button-search-clear-customer-order">Clear
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="order-history-table">
                 <table class="table">
-                    <thead class="order-history-head">
+                    <thead class="order-history-table-head">
                     <tr>
                         <th scope="col">Order Id</th>
                         <th scope="col">Customer Id</th>
-                        <th scope="col">Customer Name</th>
                         <th scope="col">Item Code</th>
-                        <th scope="col">Item Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Total</th>
+                        <th scope="col">Date</th>
                     </tr>
                     </thead>
                     <tbody id="order-history-table-body">
@@ -565,6 +596,7 @@
 <script type="module" src="controller/CustomerController.js"></script>
 <script type="module" src="controller/ItemController.js"></script>
 <script type="module" src="controller/OrderController.js"></script>
+<script type="module" src="controller/OrderHistoryController.js"></script>
 
 
 </body>
